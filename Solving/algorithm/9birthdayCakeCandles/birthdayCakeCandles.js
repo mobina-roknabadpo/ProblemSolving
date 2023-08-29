@@ -23,7 +23,7 @@ function readLine() {
 }
 
 /*
- * Complete the 'birthdayCakeCandles' function below.
+ * Complete the '9birthdayCakeCandles' function below.
  *
  * The function is expected to return an INTEGER.
  * The function accepts INTEGER_ARRAY candles as parameter.

@@ -21,37 +21,29 @@ function readLine() {
 }
 
 /*
- * Complete the 'plusMinus' function below.
+ * Complete the '8miniMaxSum' function below.
  *
  * The function accepts INTEGER_ARRAY arr as parameter.
  */
 
-function plusMinus(arr) {
+function miniMaxSum(arr) {
     // Write your code here
-    const size = arr.length;
-    let negative = 0;
-    let positive = 0;
-    let zero = 0;
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i] === 0){
-            zero ++;
-        }else if(arr[i] > 0){
-            positive ++;
-        }else{
-            negative++;
+    let b = [];
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            sum = sum + arr[j]
         }
+        b.push(sum-arr[i]);
+        sum = 0;
     }
-    console.log(
-        `${(positive/size).toFixed(6)}
-    ${(negative/size).toFixed(6)}
-    ${(zero/size).toFixed(6)}`);
+    console.log(Math.min(...b), Math.max(...b))
 
 }
 
 function main() {
-    const n = parseInt(readLine().trim(), 10);
 
     const arr = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
 
-    plusMinus(arr);
+    miniMaxSum(arr);
 }

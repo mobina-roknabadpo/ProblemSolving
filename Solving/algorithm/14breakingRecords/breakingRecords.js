@@ -23,7 +23,7 @@ function readLine() {
 }
 
 /*
- * Complete the 'breakingRecords' function below.
+ * Complete the '14breakingRecords' function below.
  *
  * The function is expected to return an INTEGER_ARRAY.
  * The function accepts INTEGER_ARRAY scores as parameter.
