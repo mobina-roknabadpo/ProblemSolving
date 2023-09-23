@@ -1,64 +1,24 @@
-'use strict';
-
-const fs = require('fs');
-
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
-
-let inputString = '';
-let currentLine = 0;
-
-process.stdin.on('data', function(inputStdin) {
-    inputString += inputStdin;
-});
-
-process.stdin.on('end', function() {
-    inputString = inputString.split('\n');
-
-    main();
-});
-
-function readLine() {
-    return inputString[currentLine++];
-}
-
-/*
- * Complete the '10timeConversion' function below.
- *
- * The function is expected to return a STRING.
- * The function accepts STRING s as parameter.
- */
-
 function timeConversion(s) {
-    // Write your code here
+  const format = s.substring(0, 8);
+  const ampm = s.substring(8);
+  const times = format.split(":");
 
-    const hour = s.slice(0, 2);
-    const timeFormat = s.slice(2, 8);
-    const label = s.slice(8, 10);
-    if (+hour === 12 && label === 'AM') {
-        return("00" + timeFormat);
+  if (times[0] == 12 && ampm == "AM") {
+    times[0] = "00";
+    return times.join(":");
+  }
+  if (times[0] == 12 && ampm == "PM") {
+    return times.join(":");
+  }
+  if (times[0] < 12 && ampm == "PM") {
+    times[0] = 12 + +times[0];
+    console.log(times);
+    return times.join(":");
+  } else {
+    if (times[0] < 10) {
+      return times.join(":");
     }
-    if (+hour === 12 && label === 'PM') {
-        return(hour + timeFormat);
-    }
-    if (hour < 12 && label === 'PM') {
-        return(12 + +hour + timeFormat);
-    } else {
-        if (hour < 10) {
-            return("0" + +hour + timeFormat);
-        }
-    }
-
+  }
 }
 
-function main() {
-    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
-
-    const s = readLine();
-
-    const result = timeConversion(s);
-
-    ws.write(result + '\n');
-
-    ws.end();
-}
+console.log(timeConversion("12:05:45AM"));
