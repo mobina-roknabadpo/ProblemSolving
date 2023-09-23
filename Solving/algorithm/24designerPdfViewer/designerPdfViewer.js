@@ -1,5 +1,4 @@
 function designerPdfViewer(h, word) {
-  // Write your code here
   const lengthWord = word.length;
   const answer = [];
   const trim = word.trim();

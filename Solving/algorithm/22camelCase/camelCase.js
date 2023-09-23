@@ -13,5 +13,5 @@ function camelcase(s) {
   // return count.length;
 }
 
-const answer = camelcase("oneTwoThree"); //output: 3
+const answer = camelcase("oneTwoThree");
 console.log(answer);

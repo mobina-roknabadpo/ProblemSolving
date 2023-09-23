@@ -11,11 +11,9 @@ function treeHeight(node) {
   if (node === null) {
     return -1;
   } else {
-    /* compute the depth of each subtree */
     let leftHeight = treeHeight(node.left);
     let rightHeight = treeHeight(node.right);
     console.log("lDepth", leftHeight, "rDepth", rightHeight);
-    /* use the larger one */
     return Math.max(leftHeight, rightHeight) + 1;
   }
 }
