@@ -1,5 +1,4 @@
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
-  // Write your code here
   let countApple = 0;
   let countOrange = 0;
   for (let i = 0; i < apples.length; i++) {
@@ -18,4 +17,4 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
   console.log(countApple + "\n" + countOrange);
 }
 
-countApplesAndOranges(7,11,5,15,[-2,2,1],[5,-5]);
+countApplesAndOranges(7, 11, 5, 15, [-2, 2, 1], [5, -5]);
