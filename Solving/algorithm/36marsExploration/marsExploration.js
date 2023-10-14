@@ -1,9 +1,12 @@
 function marsExploration(s) {
-  const signal = [...s];
-  const a = signal.filter((item) => {
-    return item !== "S" && item !== "O";
+  const signalArr = [...s];
+  const signal = "SOS";
+  const a = signalArr.filter((item, index) => {
+    return item !== signal[index % 3];
   });
   return a.length;
 }
 
-marsExploration("SOSSPSSQSSOR"); //output => 3
+marsExploration(
+  "SOSOSOSOSDSDSKWOSDOSDOASDOASDFAFJDFDOSOSOWNSOSOSNDSKDDOSOSOSJDSDSOOSOSDSDOSASSOASDSAOSOSODSDSOASDWS"
+); //output => 3
