@@ -1,6 +1,5 @@
 function funnyString(s) {
-  // Write your code here
-  let flag = 0;
+  let isFunny = 0;
   const charCode = [];
   for (let char of s) {
     charCode.push(char.charCodeAt());
@@ -12,13 +11,13 @@ function funnyString(s) {
     charCode[i] = Math.abs(charCode[i] - charCode[i + 1]);
     reverseArr[i] = Math.abs(reverseArr[i] - reverseArr[i + 1]);
     if (charCode[i] === reverseArr[i]) {
-      flag = 1;
+      isFunny = 1;
     } else {
-      flag = 0;
+      isFunny = 0;
       break;
     }
   }
-  const result = flag ? "Funny" : "Not Funny";
+  const result = isFunny ? "Funny" : "Not Funny";
   return result;
 }
 const result = funnyString("lmnop");
